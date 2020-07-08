@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">KYCAdmin</string>
+
+    <string name="title_users">Users</string>
+    <string name="title_dealers">Dealers</string>
+
+    <string name="search_hint">Search</string>
+
+    <string name="title_pan">PAN:</string>
+    <string name="title_gstin">GSTIN:</string>
+    <string name="title_aadhar">Aadhar:</string>
+    <string name="title_addedby">Added by:</string>
+    <string name="title_address">Address:</string>
+
+    <string name="title_enterprise_name">Name:</string>
+    <string name="title_contact_person">Contact:</string>
+    <string name="title_contact_number">Phone:</string>
+    <string name="title_cheque">Cheque:</string>
+    <string name="title_trade_licence">Trade Licence:</string>
+    <string name="title_address_proof">Address Proof:</string>
+    <string name="title_agreement">Agreement:</string>
+    <string name="title_dealer_picture">Dealer\'s Photo:</string>
+
+    <string name="option_edit">Edit</string>
+    <string name="option_delete">Delete</string>
+
+    <string name="upload_images">Upload</string>
+
+    <string name="dialog_edit_phone_verify">Verify</string>
+    <string name="dialog_edit_phone_update">Update</string>
+    <string name="dialog_edit_phone_cancel">Cancel</string>
+    <string name="title_activity_edit_dealer_profile">Edit Dealer Profile</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="profile_enterprise_details">Enterprise Details:</string>
+    <string name="profile_statutory_details">Statutory Details:</string>
+    <string name="profile_address_details">Address Details:</string>
+    <string name="profile_income_details">Income Details:</string>
+</resources>
