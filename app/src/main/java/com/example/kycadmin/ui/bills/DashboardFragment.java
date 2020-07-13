@@ -18,7 +18,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.kycadmin.Dealer;
+import com.example.kycadmin.Bill;
+import com.example.kycadmin.BillCustomAdapter;
 import com.example.kycadmin.DealerCustomAdapter;
 import com.example.kycadmin.R;
 import com.example.kycadmin.User;
@@ -33,11 +34,11 @@ import java.util.ArrayList;
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
-    private static DealerCustomAdapter adapter;
+    private static BillCustomAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
     private static ProgressBar progressBar;
-    private static ArrayList<Dealer> data;
+    private static ArrayList<Bill> data;
     private static ArrayList<User> removedItems;
     private SearchView searchView;
     private DatabaseReference database;
@@ -46,9 +47,9 @@ public class DashboardFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        recyclerView = (RecyclerView) root.findViewById(R.id.dealer_recycler_view);
-        progressBar = (ProgressBar) root.findViewById(R.id.dealer_progress_bar);
+        View root = inflater.inflate(R.layout.fragment_bills, container, false);
+        recyclerView = (RecyclerView) root.findViewById(R.id.bills_recycler_view);
+        progressBar = (ProgressBar) root.findViewById(R.id.bills_progress_bar);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -56,27 +57,18 @@ public class DashboardFragment extends Fragment {
         setHasOptionsMenu(true);
         data = new ArrayList<>();
         database = FirebaseDatabase.getInstance().getReference();
-        database.child("dealers").addListenerForSingleValueEvent(new ValueEventListener() {
+        database.child("billing_info").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                    Dealer dealer = new Dealer();
-                    dealer.setName(String.valueOf(ds.getValue(Dealer.class).getName().toString()));
-                    dealer.setContact(String.valueOf(ds.getValue(Dealer.class).getContact().toString()));
-                    dealer.setEnterpriseName(ds.getValue(Dealer.class).getEnterpriseName());
-                    dealer.setAddr1(ds.getValue(Dealer.class).getAddr1());
-                    dealer.setAddr2(ds.getValue(Dealer.class).getAddr2());
-                    dealer.setAddr3(ds.getValue(Dealer.class).getAddr3());
-                    dealer.setGstin(ds.getValue(Dealer.class).getGstin());
-                    dealer.setPan(ds.getValue(Dealer.class).getPan());
-                    dealer.setLat(ds.getValue(Dealer.class).getLat());
-                    dealer.setLon(ds.getValue(Dealer.class).getLon());
-                    dealer.setId(ds.getValue(Dealer.class).getId());
-                    dealer.setAadhar(ds.getValue(Dealer.class).getAadhar());
-                    dealer.setAddedBy(ds.getValue(Dealer.class).getAddedBy());
-                    data.add(dealer);
+                    Bill bill = new Bill();
+                    bill.setBill(String.valueOf(ds.getValue(Bill.class).getBill().toString()));
+                    bill.setDate(String.valueOf(ds.getValue(Bill.class).getDate().toString()));
+                    bill.setEnterprise_name(ds.getValue(Bill.class).getEnterprise_name());
+                    bill.setEnterprise_id(ds.getValue(Bill.class).getEnterprise_id());
+                    data.add(bill);
                 }
-                adapter = new DealerCustomAdapter(getContext(), data);
+                adapter = new BillCustomAdapter(getContext(), data);
                 recyclerView.setAdapter(adapter);
             }
 
@@ -86,7 +78,7 @@ public class DashboardFragment extends Fragment {
 
         });
         removedItems = new ArrayList<User>();
-        adapter = new DealerCustomAdapter(getContext(), data);
+        adapter = new BillCustomAdapter(getContext(), data);
         recyclerView.setAdapter(adapter);
         return root;
     }

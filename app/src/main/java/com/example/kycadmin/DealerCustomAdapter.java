@@ -411,7 +411,7 @@ public class DealerCustomAdapter extends RecyclerView.Adapter<DealerCustomAdapte
             protected FilterResults performFiltering(CharSequence charSequence) {
                 String charString = charSequence.toString();
                 if (charString.isEmpty()) {
-                    dataSetFiltered = dataSet;
+                    dataSetFiltered = dataSetOriginal;
                 } else {
                     List<Dealer> filteredList = new ArrayList<>();
                     for (Dealer row : dataSetOriginal) {

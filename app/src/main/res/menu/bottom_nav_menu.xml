@@ -11,5 +11,10 @@
         android:icon="@drawable/ic_dealers_foreground"
         android:title="@string/title_dealers" />
 
+    <item
+        android:id="@+id/navigation_bills"
+        android:title="@string/title_bills"
+        android:icon="@drawable/ic_bills_foreground"/>
+
 </menu>
 

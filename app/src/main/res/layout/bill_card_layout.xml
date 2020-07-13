@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginHorizontal="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bill_card"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20dp"
+                        android:layout_weight="9"
+                        android:id="@+id/bill_card_enterprise"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/bill_card_bill_number"
+                        android:textStyle="bold"
+                        android:layout_weight="8"
+                        android:gravity="start|center_vertical" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/bill_card_bill_date"
+                        android:textStyle="bold"
+                        android:layout_weight="6"
+                        android:gravity="end|center_vertical"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorPrimary"
+                            android:layout_marginVertical="5dp"
+                            android:id="@+id/bill_card_separator"/>
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="vertical">-->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="fill_parent"
+                                    android:id="@+id/bill_card_bill_image">
+                                </ImageView>
+                            </LinearLayout>
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:id="@+id/dealer_card_gstin"-->
+            <!--                        android:text="@string/title_gstin"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        android:layout_weight="2"-->
+            <!--                        android:gravity="start|center_vertical" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:id="@+id/dealer_card_gstin_number"-->
+            <!--                        android:layout_weight="6"-->
+            <!--                        android:gravity="end|center_vertical"/>-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:id="@+id/dealer_card_aadhar"-->
+            <!--                        android:text="@string/title_aadhar"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        android:layout_weight="2"-->
+            <!--                        android:gravity="start|center_vertical" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:id="@+id/dealer_card_aadhar_number"-->
+            <!--                        android:layout_weight="6"-->
+            <!--                        android:gravity="end|center_vertical"/>-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:id="@+id/dealer_card_addedby"-->
+            <!--                        android:text="@string/title_addedby"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        android:layout_weight="2"-->
+            <!--                        android:gravity="start|center_vertical" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:id="@+id/dealer_card_addedby_user"-->
+            <!--                        android:layout_weight="6"-->
+            <!--                        android:gravity="end|center_vertical"/>-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:id="@+id/dealer_card_addedby_user_space"-->
+            <!--                        android:text=""-->
+            <!--                        android:layout_weight="2"-->
+            <!--                        android:gravity="start|center_vertical" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:id="@+id/dealer_card_addedby_user_mobile"-->
+            <!--                        android:layout_weight="6"-->
+            <!--                        android:gravity="end|center_vertical"/>-->
+            <!--                </LinearLayout>-->
+            <!--            </LinearLayout>-->
+
+            <!--            <View-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="2dp"-->
+            <!--                android:background="@color/colorPrimary"-->
+            <!--                android:layout_marginVertical="5dp"-->
+            <!--                android:id="@+id/dealer_card_separator_1"/>-->
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:id="@+id/dealer_card_address"-->
+            <!--                        android:layout_weight="10"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        android:text="@string/title_address"/>-->
+
+            <!--                    <ImageButton-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="20dp"-->
+            <!--                        android:id="@+id/dealer_card_map"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:background="#FFFFFF"-->
+            <!--                        android:cropToPadding="true"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/ic_maps_foreground" />-->
+
+            <!--                </LinearLayout>-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:id="@+id/dealer_card_address1"/>-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:id="@+id/dealer_card_address2"/>-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:id="@+id/dealer_card_address3"/>-->
+            <!--            </LinearLayout>-->
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

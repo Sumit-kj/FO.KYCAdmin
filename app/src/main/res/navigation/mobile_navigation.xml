@@ -17,4 +17,10 @@
         android:label="@string/title_dealers"
         tools:layout="@layout/fragment_dashboard" />
 
+    <fragment
+        android:id="@+id/navigation_bills"
+        android:name="com.example.kycadmin.ui.bills.DashboardFragment"
+        android:label="@string/title_bills"
+        tools:layout="@layout/fragment_bills" />
+
 </navigation>
