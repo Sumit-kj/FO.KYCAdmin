@@ -2,12 +2,14 @@ package com.example.kycadmin.ui.bills;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 
@@ -18,16 +20,20 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.kycadmin.Bill;
 import com.example.kycadmin.BillCustomAdapter;
-import com.example.kycadmin.DealerCustomAdapter;
 import com.example.kycadmin.R;
 import com.example.kycadmin.User;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -39,9 +45,10 @@ public class DashboardFragment extends Fragment {
     private static RecyclerView recyclerView;
     private static ProgressBar progressBar;
     private static ArrayList<Bill> data;
-    private static ArrayList<User> removedItems;
+    private static ArrayList<Bill> removedItems;
     private SearchView searchView;
     private DatabaseReference database;
+    StorageReference storageReference;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -77,7 +84,7 @@ public class DashboardFragment extends Fragment {
             }
 
         });
-        removedItems = new ArrayList<User>();
+        removedItems = new ArrayList<Bill>();
         adapter = new BillCustomAdapter(getContext(), data);
         recyclerView.setAdapter(adapter);
         return root;
